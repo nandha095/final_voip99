@@ -1,0 +1,10 @@
+[from-internal]
+exten => _X.,1,NoOp(Outbound call from browser/FastAPI to ${EXTEN})
+ same => n,Dial(PJSIP/${EXTEN}@provider-endpoint,60)
+ same => n,Hangup()
+
+[from-provider]
+exten => _X.,1,NoOp(Inbound call from provider to browser endpoint 7001)
+ same => n,Dial(PJSIP/7001,45)
+ same => n,Voicemail(7001@default,u)
+ same => n,Hangup()

@@ -1,0 +1,12 @@
+[general]
+enabled=yes
+bindaddr=0.0.0.0
+bindport=8088
+
+[tls]
+enabled=yes
+bindaddr=0.0.0.0:8089
+tlsenable=yes
+tlscertfile=/etc/asterisk/keys/fullchain.pem
+tlsprivatekey=/etc/asterisk/keys/privkey.pem
+tlsclientmethod=tlsv1_2

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browser SIP Calling</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="panel hero">
+      <p class="eyebrow">FastAPI + Asterisk + WebRTC</p>
+      <h1>Browser SIP Calling Console</h1>
+      <p class="lede">Register a browser as a SIP endpoint, place calls over your Asterisk trunk, and keep real-time audio in Chrome or Edge.</p>
+      <div class="status-grid">
+        <article>
+          <span>Transport</span>
+          <strong id="transport-status">Disconnected</strong>
+        </article>
+        <article>
+          <span>Registration</span>
+          <strong id="registration-status">Unknown</strong>
+        </article>
+        <article>
+          <span>Session</span>
+          <strong id="call-status">Idle</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel controls">
+      <div class="stack">
+        <label for="destination">Destination Number</label>
+        <input id="destination" name="destination" type="text" placeholder="e.g. 15551234567">
+      </div>
+
+      <div class="button-row">
+        <button id="register-btn" type="button">Register Browser</button>
+        <button id="call-btn" type="button">Call</button>
+        <button id="answer-btn" type="button">Answer</button>
+        <button id="hangup-btn" type="button">Hang Up</button>
+      </div>
+
+      <div class="button-row secondary">
+        <button id="mic-btn" type="button">Check Microphone</button>
+        <button id="backend-call-btn" type="button">Originate From FastAPI</button>
+      </div>
+
+      <pre id="event-log" class="event-log">Waiting for configuration...</pre>
+      <audio id="remote-audio" autoplay playsinline></audio>
+    </section>
+  </main>
+
+  <script type="module" src="/static/app.js"></script>
+</body>
+</html>
