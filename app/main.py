@@ -33,4 +33,3 @@ async def root() -> FileResponse:
     return FileResponse("static/index.html")
 
 
-print(f"Starting {settings.app_name} on port {settings.app_port}...")
