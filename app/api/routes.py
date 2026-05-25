@@ -72,3 +72,6 @@ async def hangup_call(call_id: str) -> CallStatusResponse:
         raise HTTPException(status_code=404, detail="Call not found")
     record = call_store.update(call_id, state="hangup")
     return CallStatusResponse(call=record)
+
+
+
